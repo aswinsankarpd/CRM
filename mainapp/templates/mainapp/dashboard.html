@@ -15,14 +15,13 @@
 				<tr>
 					<th></th>
 					<th>Customer</th>
-					<th>Orders</th>
+					<th>Phone</th>
 				</tr>
 				{% for cust in customer %}
 				<tr>
+					<td><a class="btn btn-sm btn-info" href="{% url 'customer' cust.id %}" target="blank">View</a></td>
 					<td>{{cust.name}}</td>
 					<td>{{cust.phone}}</td>
-					<td>{{cust.email}}</td>
-					<td>{{cust.date_created}}</td>
 				</tr>
 					
 				{% endfor %}
