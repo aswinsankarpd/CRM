@@ -49,8 +49,9 @@
 						<td>{{ord.product}}</td>
 						<td>{{ord.data_created}}</td>
 						<td>{{ord.status}}</td>
-						<td><button class="btn btn-primary btn"> Update</td>
-						<td> <button class="btn btn-danger btn"> Remove</td>
+						<td><button class="btn btn-primary btn"> <a style = "color:white;text-decoration:none" href="{% url 'update_order' ord.id %}">Update</a></td>
+						<td><button class="btn btn-danger btn"> <a style = "color:white;text-decoration:none" href="{% url 'remove_order' ord.id %}">Remove</a></td>
+						
 					</tr>
 				{% endfor %}
 		

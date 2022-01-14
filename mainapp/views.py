@@ -33,6 +33,25 @@ def create_order(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/create_order')
+            return redirect('/dashboard')
     context = {'form':form}
     return render(request,'mainapp/order_form.html',context)
+
+def update_order(request,pk_test):
+    order = Order.objects.get(id=pk_test)
+    form = OrderForm(instance=order)
+    context = {'form':form}
+
+    if request.method == 'POST':
+        form = OrderForm(request.POST,instance=order)
+        if form.is_valid():
+            form.save()
+            return redirect('/dashboard')
+            
+    return render(request,'mainapp/update_form.html',context)
+
+def remove_order(request,pk_test):
+    Order.objects.get(id = pk_test).delete()
+    return redirect('/dashboard')
+    #return render(request,'mainapp/remove_order.html')
+    
