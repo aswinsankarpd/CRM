@@ -6,5 +6,5 @@ urlpatterns = [
     path('dashboard', views.dashboard, name='dashboard'),
     path('products', views.products, name='products'),
     path('customer_profile/<str:pk_test>', views.customer, name='customer'),
-
+    path('create_order', views.create_order, name='create_order'),
 ]
